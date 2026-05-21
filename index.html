@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fashion.co - Trang Chủ</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <div class="container header-flex">
+            <div class="logo" onclick="window.showPage('trang-chu')" style="cursor: pointer;">FASHION.CO</div>
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="#trang-chu" class="active" onclick="window.showPage('trang-chu')">Trang Chủ</a></li>
+                        <li><a href="#thoi-trang-nam" onclick="window.showPage('thoi-trang-nam')">Thời Trang Nam</a></li>
+                        <li><a href="#thoi-trang-nu" onclick="window.showPage('thoi-trang-nu')">Thời Trang Nữ</a></li>
+                        <li><a href="#bo-suu-tap" onclick="window.showPage('bo-suu-tap')">Bộ Sưu Tập Mới</a></li>
+                        <li><a href="#khuyen-mai" onclick="window.showPage('khuyen-mai')">Khuyến Mãi</a></li>
+                        <li><a href="#tin-tuc" onclick="window.showPage('tin-tuc')">Tin Tức </a></li>
+                    </ul>
+                </nav>
+
+            <div class="header-icons">
+                <span title="Tìm kiếm" id="search-icon-btn" style="cursor: pointer;">🔍</span>
+            <div class="account-dropdown" style="position: relative; display: inline-block;">
+                <span title="Tài khoản" id="account-icon-btn" style="cursor: pointer; display: inline-flex; align-items: center;">👤</span>
+                <span id="user-logged-in" style="display: none; cursor: pointer; font-weight: bold; font-size: 14px; color: #333; align-items: center; gap: 5px;">
+                <span style="background: #e0e0e0; padding: 4px 8px; border-radius: 50%;">🧑‍💻</span>
+                <span id="user-display-name">Khanh Huỳnh</span>
+                </span>
+
+            <div class="dropdown-content" id="account-dropdown-menu">
+                <a href="#dang-nhap" id="menu-login-link" onclick="window.showPage('dang-nhap'); document.getElementById('account-dropdown-menu').classList.remove('show-menu');">Đăng Nhập / Đăng Ký</a>
+                <a href="#ho-so" onclick="window.showPage('ho-so'); document.getElementById('account-dropdown-menu').classList.remove('show-menu');">Hồ Sơ Cá Nhân</a>
+                <a href="#lich-su" onclick="window.showPage('lich-su'); document.getElementById('account-dropdown-menu').classList.remove('show-menu');">Lịch Sử Đơn Hàng</a>
+                <a href="#dang-xuat" id="menu-logout-btn" style="display: none; color: red; border-top: 1px solid #eee;" onclick="window.handleLogout();">Đăng Xuất</a>
+                </div>
+            </div>
+                <span title="Giỏ hàng" onclick="alert('Bạn có ' + window.cart.length + ' sản phẩm trong giỏ!')" style="cursor: pointer;"> 🛒 <small id="cart-count">0</small> </span>
+            </div>
+    </header>
+
+        <div id="search-bar-container" style="display: none; background: #f4f4f4; padding: 15px 0; border-bottom: 1px solid #ddd; width: 100%;">
+            <div class="container" style="max-width: 600px; margin: 0 auto; display: flex; gap: 10px;">
+                <input type="text" id="search-input" placeholder="Nhập tên sản phẩm cần tìm... (Ví dụ: áo khoác, jean)" 
+                    style="flex-grow: 1; padding: 10px 15px; border: 1px solid #ccc; border-radius: 4px; font-size: 14px; outline: none;">
+                <button onclick="window.executeSearch()" style="background: #000; color: #fff; border: none; padding: 0 25px; border-radius: 4px; cursor: pointer; font-weight: bold; font-size: 14px; text-transform: uppercase;">
+                    Tìm
+                </button>
+            </div>
+        </div>
+
+         <div id="trang-chu" class="page-section">
+            <section class="hero-banner">
+                <div class="container hero-flex">
+                    <div class="hero-content">
+                        <p>BỘ SƯU TẬP MỚI 2026</p>
+                        <h1>TỐI GIẢN & TINH TẾ</h1>
+                        <button class="btn-shop">KHÁM PHÁ NGAY</button>
+                    </div>
+                    <div class="hero-img">
+                        <img src="https://storage.googleapis.com/ops-shopee-files-live/live/shopee-blog/2023/05/049addb1-phoi-do-cho-nguoi-gay-lewkin.com_.jpg" alt="Fashion Model">
+                    </div>
+                </div>
+            </section>
+
+            <section class="categories container grid-4-cols">
+                <div class="grid-item"> <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYIqyCKDNon-ZwwwdITO9fR_4OSzzcYurNVg&s" alt="Áo Khoác"> <div class="label">ÁO KHOÁC</div> </div>
+                <div class="grid-item"> <img src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcSIip5YD_LPQ3Itn5YSJzCR7sqMVq7knzGJ-pIjn92YiHWjzOu1pImlfOTetZLeDqH0NL0s-niQH90vBiBr7C9iT0a735LIjRVAz32NzGkB8gLqn2_AkklL&usqp=CAc" alt="Quần Jean"> <div class="label">QUẦN JEAN</div> </div>
+                <div class="grid-item"> <img src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcRNQDLndHfUZIWYYaF-eZiF6DIn61zSHKNS1LzeRQEKDiKTQjlDiwTzkAIvG3QVI4k1VIBPFThH_1-q7yxbIiHWP2VCz_9al9DFrPdnPsVXa3vwTSD_yRCRziM8RnRV9__RnEoUAg&usqp=CAc" alt="Áo Kiểu Nữ"> <div class="label">ÁO KIỂU NỮ</div> </div>
+                <div class="grid-item"> <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTq4t5gS3yz3LbVilijIFkhJCUUmIjiF7GFfQ&s" alt="Bán Chạy"> <div class="label">BÁN CHẠY</div> </div>
+            </section>
+        </div>
+
+
+        <div id="thoi-trang-nam" class="page-section" style="display: none;">
+            <div class="container" style="padding: 40px 0;">
+                <h2 style="letter-spacing: 5px; margin-bottom: 30px; text-align: center;">THỜI TRANG NAM</h2>
+                <div style="display: flex; gap: 30px;">
+                    <aside style="width: 220px;">
+                        <h4 style="border-bottom: 2px solid #000; padding-bottom: 10px;">DANH MỤC</h4>
+                        <ul class="filter-menu" style="list-style: none; padding-top: 15px; font-size: 14px; line-height: 3;">
+                        <li><a href="javascript:void(0)" onclick="filterProducts('all', event, 'thoi-trang-nam')" style="text-decoration: none; color: #000; font-weight: bold; display: block; cursor: pointer;">Tất Cả Sản Phẩm </a></li>
+                        <li><a href="javascript:void(0)" onclick="filterProducts('ao-thun', event, 'thoi-trang-nam')" style="text-decoration: none; color: #555; display: block; cursor: pointer;">Áo Thun</a></li>
+                        <li><a href="javascript:void(0)" onclick="filterProducts('quan-jean', event, 'thoi-trang-nam')" style="text-decoration: none; color: #555; display: block; cursor: pointer;">Quần Jean</a></li>
+                        <li><a href="javascript:void(0)" onclick="filterProducts('ao-khoac-jean', event, 'thoi-trang-nam')" style="text-decoration: none; color: #555; display: block; cursor: pointer;">Áo Khoác Jean</a></li>
+                        </ul>
+                    </aside>
+                    <div id="product-grid" style="flex: 1; display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px;"> </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="thoi-trang-nu" class="page-section" style="display: none;">
+            <div class="container" style="padding: 40px 0;">
+                <h2 style="letter-spacing: 5px; margin-bottom: 30px; text-align: center;">THỜI TRANG NỮ</h2>
+                <div style="display: flex; gap: 30px;">
+                    <aside style="width: 220px;">
+                        <h4 style="border-bottom: 2px solid #000; padding-bottom: 10px;">DANH MỤC</h4>
+                        <ul class="filter-menu" style="list-style: none; padding-top: 15px; font-size: 14px; line-height: 3;">
+                        <li><a href="javascript:void(0)" onclick="filterProducts('all', event, 'thoi-trang-nu')" style="text-decoration: none; color: #000; font-weight: bold; display: block; cursor: pointer;">Tất Cả Sản Phẩm </a></li>
+                        <li><a href="javascript:void(0)" onclick="filterProducts('ao-kieu', event, 'thoi-trang-nu')" style="text-decoration: none; color: #555; display: block; cursor: pointer;">Áo Kiểu</a></li>
+                        <li><a href="javascript:void(0)" onclick="filterProducts('chan-vay', event, 'thoi-trang-nu')" style="text-decoration: none; color: #555; display: block; cursor: pointer;">Chân Váy</a></li>
+                        <li><a href="javascript:void(0)" onclick="filterProducts('quan-jean', event, 'thoi-trang-nu')" style="text-decoration: none; color: #555; display: block; cursor: pointer;">Quần Jean</a></li>
+                        </ul>
+                    </aside>
+                    <div id="grid-nu" style="flex: 1; display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px;"> </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="bo-suu-tap" class="page-section" style="display: none;">
+            <div class="container" style="padding: 50px 0;">
+                <h2 style="letter-spacing: 5px; margin-bottom: 30px; text-align: center; text-transform: uppercase;">Bộ Sưu Tập Mới 2026</h2>
+                <div style="display: flex; gap: 30px;">
+                    <aside style="width: 220px;">
+                        <h4 style="border-bottom: 2px solid #000; padding-bottom: 10px; margin-bottom: 20px;">XU HƯỚNG</h4>
+                        <div class="filter-menu-div">
+                            <span class="menu-item" onclick="filterProducts('trending', event, 'bo-suu-tap')">Bán chạy nhất</span>
+                        </div>
+                    </aside>
+                    <div id="grid-new" style="flex: 1; display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px;"> </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="khuyen-mai" class="page-section" style="display: none;">
+            <div class="container" style="padding: 50px 0;">
+                <h2 style="letter-spacing: 5px; margin-bottom: 30px; text-align: center; color: #d10000;">ƯU ĐÃI KHUYẾN MÃI</h2>
+                <div style="display: flex; gap: 30px;">
+                    <aside style="width: 220px;">
+                        <h4 style="border-bottom: 2px solid #000; padding-bottom: 10px; margin-bottom: 20px;">DANH MỤC</h4>
+                        <div class="filter-menu-div">
+                            <span class="menu-item" onclick="filterProducts('sale', event, 'khuyen-mai')">Đang giảm giá</span>
+                        </div>
+                    </aside>
+                    <div id="grid-km" style="flex: 1; display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px;"> </div>
+                </div>
+            </div>
+        </div>
+
+         <div id="tin-tuc" class="page-section" style="display: none;">
+            <div class="container" style="padding: 50px 0;">
+                <h2 style="letter-spacing: 5px; margin-bottom: 30px; text-align: center;">TIN TỨC MỚI NHẤT</h2>
+                <div style="display: flex; gap: 30px;">
+                    <aside style="width: 220px;">
+                        <h4 style="border-bottom: 2px solid #000; padding-bottom: 10px; margin-bottom: 20px;">TIN MỚI</h4>
+                        <div class="filter-menu-div">
+                            <span class="menu-item" onclick="filterProducts('blog', event, 'tin-tuc')">Thông tin thời trang</span>
+                        </div>
+                    </aside>
+                    <div id="grid-news" class="product-grid-layout" style="flex: 1;"> </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="chi-tiet-bai-viet" class="page-section" style="display: none; padding: 50px 0; background: #fff;">
+            <div class="container" style="max-width: 800px;">
+                <button onclick="window.showPage('tin-tuc')" style="background: none; border: none; font-weight: 700; cursor: pointer; font-size: 14px; margin-bottom: 30px; letter-spacing: 1px;">
+                    ← QUAY LẠI TRANG TIN TỨC
+                </button>
+                <div id="noi-dung-chi-tiet"> </div>
+            </div>
+        </div>
+
+        <div id="dang-nhap" class="page-section" style="display: none; padding: 40px 0; background-color: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+            <div class="container" style="max-width: 500px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; padding: 20px;">
+                <h2 style="font-size: 26px; font-weight: 400; color: #000; margin: 0 0 5px 0; letter-spacing: 0.5px; text-align: center;">Đăng nhập</h2>
+                
+                <div style="display: flex; flex-direction: column; gap: 8px;">
+                    <label style="font-size: 14px; color: #000;">Địa chỉ email <span style="color: #f00;">*</span></label>
+                    <input type="email" id="login-email" placeholder="example@email.com" style="width: 100%; padding: 12px; border: 1px solid #8d8d8d; font-size: 14px; box-sizing: border-box; outline: none;">
+                </div>
+                
+                <div style="display: flex; flex-direction: column; gap: 8px;">
+                    <label style="font-size: 14px; color: #000;">Mật khẩu <span style="color: #f00;">*</span></label>
+                    <div style="position: relative; width: 100%;">
+                        <input type="password" id="login-password" placeholder="Vui lòng nhập mật khẩu." style="width: 100%; padding: 12px; border: 1px solid #8d8d8d; font-size: 14px; box-sizing: border-box; outline: none;">
+                        <span onclick="window.togglePasswordVisibility('login-password')" style="position: absolute; right: 12px; top: 50%; transform: translateY(-50%); cursor: pointer; color: #666; font-size: 16px;">👁️</span>
+                    </div>
+                </div>
+                
+                <a href="#" style="font-size: 13px; color: #0066cc; text-decoration: underline; align-self: flex-start; margin-top: -5px;">Quên mật khẩu của bạn?</a>
+                
+                <button onclick="window.handleLogin()" style="width: 100%; background: #000000; color: #ffffff; border: none; padding: 16px; font-size: 14px; font-weight: bold; text-transform: uppercase; cursor: pointer; letter-spacing: 1px;">
+                    ĐĂNG NHẬP
+                </button>
+
+                <div style="text-align: center; margin-top: 15px; border-top: 1px solid #e5e5e5; padding-top: 20px;">
+                    <p style="font-size: 14px; color: #333; margin: 0 0 12px 0;">Bạn chưa có tài khoản?</p>
+                    <button onclick="window.chuyenSangTrangDangKy()" style="width: 100%; background: #ffffff; color: #000000; border: 1px solid #000000; padding: 14px; font-size: 14px; font-weight: bold; text-transform: uppercase; cursor: pointer; letter-spacing: 1px;">
+                        Tạo tài khoản mới
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="dang-ky" class="page-section" style="display: none; padding: 40px 0; background-color: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+            <div class="container" style="max-width: 500px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; padding: 20px;">
+                <h2 style="font-size: 26px; font-weight: 400; color: #000; margin: 0 0 5px 0; letter-spacing: 0.5px; text-align: center;">Tạo tài khoản</h2>
+                
+                <div style="display: flex; flex-direction: column; gap: 8px;">
+                    <label style="font-size: 14px; color: #000;">Họ và tên <span style="color: #f00;">*</span></label>
+                    <input type="text" id="register-name" placeholder="Ví dụ: Khanh Huỳnh" style="width: 100%; padding: 12px; border: 1px solid #8d8d8d; font-size: 14px; box-sizing: border-box; outline: none;">
+                </div>
+
+                <div style="display: flex; flex-direction: column; gap: 8px;">
+                    <label style="font-size: 14px; color: #000;">Địa chỉ email <span style="color: #f00;">*</span></label>
+                    <input type="email" id="register-email" placeholder="example@email.com" style="width: 100%; padding: 12px; border: 1px solid #8d8d8d; font-size: 14px; box-sizing: border-box; outline: none;">
+                </div>
+                
+                <div style="display: flex; flex-direction: column; gap: 8px;">
+                    <label style="font-size: 14px; color: #000;">Mật khẩu <span style="color: #f00;">*</span></label>
+                    <div style="position: relative; width: 100%;">
+                        <input type="password" id="register-password" placeholder="Tạo mật khẩu an toàn" style="width: 100%; padding: 12px 40px 12px 12px; border: 1px solid #8d8d8d; font-size: 14px; box-sizing: border-box; outline: none;">
+                        <span onclick="window.togglePasswordVisibility('register-password')" style="position: absolute; right: 12px; top: 50%; transform: translateY(-50%); cursor: pointer; color: #666; font-size: 16px;">👁️</span>
+                    </div>
+                    <div style="font-size: 12px; color: #666; line-height: 1.5; margin-top: 4px; display: flex; flex-direction: column; gap: 4px;">
+                        <span>⚪ Từ 8 - 20 kí tự</span>
+                        <span>⚪ Mật khẩu phải bao gồm cả chữ số và chữ cái</span>
+                    </div>
+                </div>
+
+                <div style="display: flex; flex-direction: column; gap: 12px; margin-top: 5px; font-size: 13px; color: #333; line-height: 1.4;">
+                    <label style="display: flex; align-items: flex-start; gap: 8px; cursor: pointer;">
+                        <input type="checkbox" checked style="margin-top: 3px;">
+                        <span>Tôi muốn nhận thông tin ưu đãi qua email.</span>
+                    </label>
+                    <label style="display: flex; align-items: flex-start; gap: 8px; cursor: pointer;">
+                        <input type="checkbox" required style="margin-top: 3px;">
+                        <span>Tôi đồng ý với Điều khoản sử dụng và Chính sách bảo mật.</span>
+                    </label>
+                </div>
+                
+                <button onclick="window.handleRegister()" style="width: 100%; background: #000000; color: #ffffff; border: none; padding: 16px; font-size: 14px; font-weight: bold; text-transform: uppercase; cursor: pointer; letter-spacing: 1px;">
+                    ĐĂNG KÝ TÀI KHOẢN
+                </button>
+
+                <a href="#" onclick="window.chuyenSangTrangDangNhap(); return false;" style="font-size: 14px; color: #0066cc; text-decoration: underline; text-align: center; margin-top: 10px;">
+                    Hủy và quay lại trang Đăng nhập
+                </a>
+            </div>
+        </div>
+
+       <div id="ho-so" class="page-section" style="display: none; padding: 50px 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+            <div class="container" style="max-width: 600px; margin: 0 auto; border: 1px solid #e5e5e5; padding: 40px; text-align: center; background: #ffffff;">
+                <h2 style="font-size: 24px; font-weight: 400; color: #000; margin-bottom: 20px; letter-spacing: 1px; text-transform: uppercase;">Hồ Sơ Cá Nhân</h2>
+                
+                <div id="ho-so-noi-dung">
+                    <div style="padding: 30px 10px;">
+                        <span style="font-size: 48px; color: #aaa; display: block; margin-bottom: 15px;">👤</span>
+                        <p style="font-size: 16px; color: #333; margin-bottom: 20px;">Bạn chưa đăng nhập tài khoản hệ thống.</p>
+                        <button onclick="window.showPage('dang-nhap')" style="background: #000000; color: #ffffff; border: none; padding: 12px 30px; font-size: 14px; font-weight: bold; text-transform: uppercase; cursor: pointer; letter-spacing: 1px;">
+                            Đăng nhập ngay
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="lich-su" class="page-section" style="display: none; padding: 60px 0; background-color: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+            <div class="container" style="max-width: 800px; margin: 0 auto; border: 1px solid #e5e5e5; padding: 40px; background: #ffffff; box-sizing: border-box;">
+                
+                <h2 style="font-size: 24px; font-weight: bold; color: #000; margin-bottom: 30px; letter-spacing: 1px; text-transform: uppercase; text-align: center;">Lịch Sử Đơn Hàng</h2>
+                
+                <div id="lich-su-noi-dung">
+                    <div style="text-align: center; padding: 30px 10px;">
+                        <span style="font-size: 60px; color: #ccc; display: block; margin-bottom: 20px;">📦</span>
+                        <p style="font-size: 15px; color: #333; margin-bottom: 25px; font-weight: 500;">Bạn chưa đăng nhập tài khoản để xem lịch sử mua hàng.</p>
+                        
+                        <button onclick="window.showPage('dang-nhap')" style="background: #000000; color: #ffffff; border: none; padding: 14px 35px; font-size: 13px; font-weight: bold; text-transform: uppercase; cursor: pointer; letter-spacing: 1px;">
+                            Đăng nhập ngay
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+         <div id="chi-tiet-san-pham" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 9999; justify-content: center; align-items: center;">
+            <div class="container" style="display: flex; gap: 40px; background: #fff; padding: 30px; border-radius: 8px; position: relative; width: 80%; max-width: 800px; box-shadow: 0 5px 15px rgba(0,0,0,0.3);">
+                
+                <span onclick="window.closeDetail()" style="position: absolute; top: 10px; right: 20px; font-size: 30px; cursor: pointer; color: #333;">&times;</span>
+
+                <div style="flex: 1;">
+                    <img id="detail-img" src="" alt="Sản phẩm" style="width: 100%; border: 1px solid #ddd; border-radius: 4px;">
+                </div>
+                
+                <div
+                style="flex: 1;">
+                    <h1 id="detail-name" style="font-size: 26px; margin-bottom: 10px;">Tên sản phẩm</h1>
+                    <p>Thương hiệu: <span id="detail-brand">Fashion.co</span></p>
+                    <div style="background: #f9f9f9; padding: 15px; margin: 20px 0;">
+                        <span id="detail-price" style="color: #ff4500; font-weight: bold; font-size: 24px;">0 ₫</span>
+                        <span id="detail-old-price" style="text-decoration: line-through; color: #888; margin-left: 10px;"></span>
+                    </div>
+                    
+                    <div style="margin-bottom: 20px;">
+                        <span>Số lượng:</span>
+                        <button onclick="window.changeQty(-1)" style="padding: 5px 12px; cursor: pointer;">-</button>
+                        <span id="detail-qty" style="margin: 0 10px; font-weight: bold;">1</span>
+                        <button onclick="window.changeQty(1)" style="padding: 5px 12px; cursor: pointer;">+</button>
+                    </div>
+
+                    <div style="display: flex; gap: 10px;">
+                        <button onclick="window.addToCart()" style="flex: 1; padding: 15px; background: #fff; border: 1px solid #28a745; color: #28a745; cursor: pointer;">Thêm vào giỏ</button>
+                        <button onclick="window.showToast('Đang chuyển đến trang thanh toán...')" style="flex: 1; padding: 15px; background: #28a745; border: none; color: white; cursor: pointer;">Mua ngay</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <section class="newsletter-section">
+            <div class="newsletter-container">
+                <div class="newsletter-text">
+                    <h2>Đăng Kí Nhận Bản Tin</h2>
+                    <p>Để nhận thông tin mới nhất từ FASHION.CO</p>
+                </div>
+                <div class="newsletter-form">
+                    <input type="email" id="newsletter-email" placeholder="Nhập địa chỉ email của bạn">
+                    <button type="button" onclick="handleNewsletter()">ĐĂNG KÍ</button>
+                </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="main-footer">
+            <div class="footer-container">
+                <div class="footer-column brand-info">
+                    <div class="footer-logo">FASHION.CO</div>
+                </div>
+                <div class="footer-column contact-info">
+                    <h3>Thông tin liên hệ</h3>
+                    <ul>
+                        <li><strong>Địa chỉ:</strong> 180 Cao Lỗ, Phường 4, Quận 8, TP Hồ Chí Minh</li>
+                        <li><strong>Email:</strong> DH52300819@student.stu.edu.vn</li>
+                        <li><strong>Điện thoại:</strong> (+08) 98905291</li>
+                    </ul>
+                </div>
+                <div class="footer-column map-info">
+                    <div class="map-wrapper">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.9544154941!2d106.67525717475141!3d10.738002459897103!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f62a90e5dbd%3A0x6744663115458735!2zMTgwIENhbyBM4buXLCBQaMaw4budbmcgNCwgUXXhuq1uIDgsIEjhu5MgQ2jDrSBNaW5oLCBWaeG7h3QgTmFt!5e0!3m2!1svi!2s!4v1715442500000" 
+                            width="100%" height="150" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>Họ và tên: Huỳnh Nguyễn Gia Khanh | MSSV: DH52300819 | Lớp: D23_TH13 | Nhóm 29 Thứ 6 Ca 4</p>
+            </div>
+        </footer>
+    <script src="mean.js"></script>
+</body>
+</html>

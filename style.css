@@ -1,0 +1,425 @@
+/* --- 1. RESET & CHUNG --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: #333;
+    line-height: 1.6;
+    background-color: #fff;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Main Footer */
+.main-footer {
+    padding: 40px 0 20px;
+    background-color: #fff;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    padding: 0 20px;
+}
+
+.footer-column {
+    flex: 1;
+}
+
+.footer-logo {
+    background-color: #444;
+    color: #fff;
+    padding: 10px;
+    display: inline-block;
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+/* --- 2. HEADER & LOGO --- */
+header {
+    background: #ffffff;
+    border-bottom: 1px solid #eee;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 15px 0;
+}
+
+.header-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-icons {
+    display: flex;
+    gap: 15px;
+    font-size: 18px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    color: #000; /* Đảm bảo logo màu đen */
+}
+
+
+/* Nút đóng khung nổi */
+.close-btn {
+    position: absolute;
+    top: 5px; 
+    right: 15px;
+    font-size: 30px;
+    cursor: pointer;
+    color: #666;
+    transition: color 0.3s;
+}
+
+.close-btn:hover {
+    color: #000; /* Đổi màu khi di chuột vào nút X */
+}
+
+/* Hiệu ứng cho nút Thêm vào giỏ */
+button:nth-child(1):hover {
+    background-color: #f0f0f0 !important; /* Màu xám nhạt khi rê chuột */
+    transform: translateY(-2px); /* Hiệu ứng nhô lên nhẹ */
+    transition: all 0.3s ease;
+}
+
+/* Hiệu ứng cho nút Mua ngay */
+button:nth-child(2):hover {
+    background-color: #218838 !important; /* Màu xanh đậm hơn khi rê chuột */
+    transform: translateY(-2px);
+    transition: all 0.3s ease;
+}
+
+/* Hiệu ứng cho cả 2 nút */
+button {
+    transition: all 0.3s ease;
+}
+
+.main-nav ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.main-nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+
+.main-nav a.active, .main-nav a:hover {
+    color: #000;
+    border-bottom: 2px solid #000;
+}
+
+
+
+/* --- 3. DROPDOWN TÀI KHOẢN --- */
+.account-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: #fff;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.1);
+    z-index: 1;
+    border: 1px solid #eee;
+}
+
+.dropdown-content a {
+    color: #333;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 13px;
+}
+
+.account-dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* --- 4. HERO BANNER (TRANG CHỦ) --- */
+.hero-banner {
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    background-color: #f9f9f9;
+}
+
+.hero-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.hero-content {
+    flex: 1;
+}
+
+.hero-content p {
+    letter-spacing: 4px;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.hero-content h1 {
+    font-size: 50px;
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+
+.btn-shop {
+    padding: 15px 40px;
+    background: #000;
+    color: #fff;
+    border: none;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.hero-img {
+    flex: 1;
+    text-align: right;
+}
+
+.hero-img img {
+    max-width: 100%;
+    height: 70vh;
+    object-fit: cover;
+}
+
+
+.grid-item {
+    position: relative;
+    overflow: hidden;
+    height: 400px;
+}
+
+.grid-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s;
+}
+
+.grid-item .label {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #fff;
+    padding: 10px 20px;
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 2px;
+}
+
+.grid-item:hover img {
+    transform: scale(1.1);
+}
+
+/* --- 6. TRANG THỜI TRANG NAM --- */
+.product-item {
+    transition: 0.3s;
+}
+
+.product-item:hover {
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* Newsletter Section */
+.newsletter-section {
+    background-color: #f4f4f4;
+    padding: 30px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.newsletter-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.newsletter-text h2 {
+    margin: 0;
+    font-size: 20px;
+    color: #333;
+}
+
+.newsletter-form {
+    display: flex;
+    gap: 0;
+}
+
+.newsletter-form input {
+    padding: 10px 15px;
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 4px 0 0 4px;
+}
+
+.newsletter-form button {
+    padding: 10px 20px;
+    background-color: #000; /* Màu xanh lá như trong hình */
+    color: white;
+    border: none;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+}
+
+
+
+.contact-info h3 {
+    margin-top: 0;
+    font-size: 18px;
+}
+
+.contact-info ul {
+    list-style: none;
+    padding: 0;
+}
+
+.contact-info ul li {
+    margin-bottom: 10px;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+    font-size: 13px;
+    color: #666;
+}
+
+
+/* Hiệu ứng khi click vào link tài khoản */
+.dropdown-content a:hover {
+    background-color: #f8f8f8;
+    color: #d10000;
+}
+
+/* CSS này giúp các mục Danh mục trông chuyên nghiệp và bấm được */
+.filter-menu-div .menu-item {
+    cursor: pointer;         /* BIẾN CHUỘT THÀNH HÌNH BÀN TAY (Quan trọng nhất) */
+    display: block;          /* Cho phép bấm vào toàn bộ vùng của dòng đó */
+    padding: 10px 0;         /* Tạo khoảng cách cho dễ bấm */
+    transition: all 0.2s;    /* Hiệu ứng mượt khi rà chuột */
+    user-select: none;       /* Ngăn việc bôi đen chữ khi bấm nhầm */
+}
+
+/* Hiệu ứng khi di chuột vào (Hover) */
+.filter-menu-div .menu-item:hover {
+    color: #000;
+    font-weight: 600;
+    padding-left: 5px;       /* Hiệu ứng nhích nhẹ sang phải */
+}
+
+/* Layout riêng cho Grid Tin Tức */
+#grid-news {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+/* Hiệu ứng zoom nhẹ hình ảnh khi rê chuột vào bài viết */
+#grid-news .news-card {
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+#grid-news .news-card:hover {
+    transform: translateY(-50px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+}
+
+#chi-tiet-bai-viet button:hover {
+    color: #d10000;
+    transform: translateX(-5px);
+    transition: 0.3s;
+}
+
+#chi-tiet-san-pham {
+    display: none; 
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 9999;
+    justify-content: center; /* Căn giữa */
+    align-items: center;      /* Căn giữa */
+}
+
+/* Đảm bảo khi JS bật lên, nó phải là display: flex */
+#chi-tiet-san-pham.active {
+    display: flex !important;
+}
+
+#chi-tiet-san-pham .container {
+    background: #fff;
+    width: 90%; /* Dùng % để linh hoạt trên điện thoại */
+    max-width: 800px;
+    padding: 30px; /* Tăng padding để nhìn thoáng hơn */
+    border-radius: 12px; /* Bo góc mềm mại hơn */
+    position: relative;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2); /* Thêm đổ bóng cho "nổi" */
+}
+
+
+/* Class dùng chung cho mọi lưới 4 cột */
+.grid-4-cols {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Tự động chia 4 cột bằng nhau */
+    gap: 25px;                            /* Khoảng cách đồng nhất */
+    padding: 30px 0;
+}
+
+.product-card {
+    display: flex;
+    flex-direction: column; /* Xếp dọc: Hình -> Tên -> Giá */
+    width: 100px;           /* Hoặc % tùy ý bạn */
+    padding: 10px;
+    border: 1px solid #eee;
+    text-align: center;
+}
+
+.product-card img {
+    width: 100%;
+    cursor: pointer;
+    flex-shrink: 0; /* Giữ nguyên kích thước ảnh */
+}
+
+/* Đảm bảo tên sản phẩm có chiều cao cố định để không đẩy khung */
+.product-card h3 {
+    height: 50px;    /* Đặt chiều cao cố định để 2 dòng không bị lệch */
+    overflow: hidden;
+    margin: 10px 0;
+    font-size: 16px;
+}
